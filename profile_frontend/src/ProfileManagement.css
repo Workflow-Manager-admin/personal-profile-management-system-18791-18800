@@ -1,0 +1,325 @@
+:root {
+  --header-gradient-1: #EA4EC6;
+  --header-gradient-2: #6A70DF;
+  --header-gradient-3: #33D2E2;
+  --bg-canvas: #FFFFFF;
+  --main-bg: #F7F9FC;
+  --card-outline: #E1E8F0;
+  --primary-action: #307DFC;
+  --status-active: #52E396;
+  --status-inactive: #FA5677;
+  --accent: #EA4EC6;
+  --accent-blue: #307DFC;
+  --tab-active: #307DFC;
+  --gray-text: #607D8B;
+  --text-heading: #222B45;
+}
+
+.pm-bg {
+  background: var(--main-bg);
+  min-height: 100vh;
+}
+
+/* HEADER BAR */
+.pm-header {
+  background: linear-gradient(90deg, var(--header-gradient-1) 0%, var(--header-gradient-2) 60%, var(--header-gradient-3) 100%);
+  color: #fff;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* App icon + label */
+.pm-header__logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.pm-header__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: #FFF;
+}
+
+.pm-header__user-btn {
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pm-main {
+  max-width: 1100px;
+  margin: 36px auto;
+  background: var(--bg-canvas);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 3px 16px rgba(60,60,70,0.06);
+}
+
+/* Stats Cards Row */
+.pm-stats-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.pm-stats-card {
+  flex: 1 1 220px;
+  min-width: 220px;
+  background: #FFF;
+  border: 1.5px solid var(--card-outline);
+  border-radius: 12px;
+  padding: 20px 18px 14px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 105px;
+  box-shadow: 0 1px 6px 0 rgba(60,90,140,0.06);
+}
+.pm-stats-card__toprow {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 8px;
+}
+.pm-stats-card__number {
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.0;
+}
+.pm-stats-card__subcaption {
+  font-size: 1.05rem;
+  font-weight: 600;
+  opacity: 0.95;
+  margin-left: 4px;
+}
+.pm-stats-card__desc {
+  font-size: 1rem;
+  color: var(--gray-text);
+  font-weight: 500;
+  margin-top: 8px;
+  letter-spacing: 0.01em;
+}
+
+/* TABS */
+.pm-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2.5px solid #EEE;
+  margin: 12px 0 8px 0;
+  padding-left: 2px;
+}
+.pm-tab {
+  background: none;
+  border: none;
+  padding: 8px 18px 10px 8px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.04rem;
+  color: var(--accent-blue);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  outline: none;
+  transition: border-color 0.18s, color 0.18s;
+}
+.pm-tab.active {
+  border-bottom: 3px solid var(--tab-active);
+  color: var(--tab-active);
+}
+
+/* SEARCH & ACTION BAR */
+.pm-search-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 8px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pm-search-box {
+  display: flex;
+  align-items: center;
+  background: #F2F5FA;
+  border-radius: 10px;
+  padding: 3px 10px 3px 1px;
+  border: 1.5px solid var(--card-outline);
+  min-width: 240px;
+  flex-grow: 1;
+  max-width: 320px;
+}
+.pm-search-icon {
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pm-search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1.06rem;
+  padding: 7px 12px 7px 2px;
+  flex: 1;
+  min-width: 0;
+  font-family: inherit;
+}
+.pm-create-btn {
+  margin-left: 18px;
+  background: var(--primary-action);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.03rem;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 22px;
+  box-shadow: 0 2px 6px rgba(30,100,250,0.08);
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.pm-create-btn:hover {
+  background: #205dc4;
+}
+
+/* PROFILE TABLE */
+.pm-table-wrapper {
+  width: 100%;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow-x: auto;
+  background: #FFF;
+  box-shadow: 0 1px 8px 0 rgba(60,90,140,0.05);
+}
+.pm-profile-table {
+  border-radius: 12px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  min-width: 760px;
+  background: transparent;
+}
+.pm-profile-table th {
+  background: #F7FAFD;
+  color: var(--gray-text);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 11px 12px;
+  text-align: left;
+  border-bottom: 2.5px solid #E1E8F0;
+  letter-spacing: 0.02em;
+}
+.pm-profile-table td {
+  font-size: 1.04rem;
+  color: var(--text-heading);
+  font-weight: 500;
+  padding: 11px 12px;
+  background: transparent;
+  height: 48px;
+  border-bottom: 1.1px solid #F0F3FA;
+}
+
+.pm-profile-table tr.alt td {
+  background: #F7F9FC;
+}
+
+.pm-profile-table td:last-child {
+  min-width: 80px;
+}
+
+/* STATUS BADGE */
+.pm-status-badge {
+  display: inline-block;
+  min-width: 54px;
+  border-radius: 15px;
+  padding: 5px 17px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #fff;
+  background: #bbb;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+.pm-status-badge.active {
+  background: var(--status-active);
+}
+.pm-status-badge.inactive {
+  background: var(--status-inactive);
+}
+
+/* ROW ACTIONS */
+.pm-table-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.pm-action-btn {
+  background: transparent;
+  border: none;
+  margin: 0 4px;
+  padding: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.13s;
+}
+.pm-action-btn.edit:hover {
+  background: rgba(48,125,252,0.13);
+}
+.pm-action-btn.copy:hover {
+  background: rgba(234,78,198,0.13);
+}
+.pm-action-btn.delete:hover {
+  background: rgba(250,86,119,0.13);
+}
+
+/* Responsive: Stack stat cards, shrink padding, scroll table horizontally on mobile */
+@media (max-width: 900px) {
+  .pm-main {
+    padding: 14px;
+  }
+  .pm-stats-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pm-stats-card {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+  .pm-table-wrapper {
+    border-radius: 9px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pm-main {
+    padding: 7px 2px;
+  }
+  .pm-header {
+    padding: 0 6px;
+    height: 44px;
+  }
+  .pm-header__title {
+    font-size: 1.13rem;
+  }
+  .pm-table-wrapper {
+    min-width: 100%;
+    overflow-x: scroll;
+  }
+}
