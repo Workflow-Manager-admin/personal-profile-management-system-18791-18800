@@ -1,0 +1,106 @@
+<div class="dashboard-root">
+  <!-- Header gradient -->
+  <header class="header-outer">
+    <div class="header-gradient"></div>
+    <div class="header-content">
+      <h1 class="dashboard-title">Profile Management</h1>
+      <div class="dashboard-desc">
+        Organize, create, and manage all profile types for your organization.
+      </div>
+    </div>
+  </header>
+
+  <!-- Info Cards Row -->
+  <div class="info-card-row">
+    <div
+      class="info-card"
+      *ngFor="let card of infoCards; let i = index"
+      [ngClass]="card.gradient"
+    >
+      <div class="info-card-content">
+        <div class="info-title">{{ card.title }}</div>
+        <div class="info-main">{{ card.value }}</div>
+        <div class="info-badge">{{ card.badge }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs and Actions Row -->
+  <div class="dashboard-toolbar">
+    <nav class="tab-row">
+      <button
+        *ngFor="let tab of tabs"
+        class="tab"
+        [class.active]="activeTab === tab.value"
+        (click)="onTab(tab.value)"
+        type="button"
+      >
+        {{ tab.label }}
+      </button>
+    </nav>
+    <div class="dashboard-actions">
+      <input
+        class="dashboard-search"
+        type="text"
+        placeholder="Search profiles…"
+        [(ngModel)]="searchText"
+        aria-label="Search profiles"
+      />
+      <button class="create-btn">
+        + Create Profile
+      </button>
+    </div>
+  </div>
+
+  <!-- Data Table -->
+  <section class="dashboard-table-card">
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>Profile Name</th>
+          <th>Devices</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Created Date</th>
+          <th style="min-width: 110px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredProfiles">
+          <td>{{ item.name }}</td>
+          <td>{{ item.devices }}</td>
+          <td>
+            <span
+              class="type-pill"
+              [ngClass]="{
+                'impromptu': item.type === 'IMPROMPTU',
+                'schedule': item.type === 'SCHEDULE'
+              }"
+            >
+              {{ item.type === 'IMPROMPTU' ? 'Impromptu' : 'Schedule' }}
+            </span>
+          </td>
+          <td>
+            <span
+              class="status-pill"
+              [ngClass]="{
+                'active': item.status === 'ACTIVE',
+                'inactive': item.status === 'INACTIVE'
+              }"
+              >{{ item.status === 'ACTIVE' ? 'Active' : 'Inactive' }}</span
+            >
+          </td>
+          <td>{{ item.created }}</td>
+          <td>
+            <button class="table-action" title="Edit" aria-label="Edit"><span class="material-icons">edit</span></button>
+            <button class="table-action" title="Download" aria-label="Download"><span class="material-icons">download</span></button>
+            <button class="table-action" title="Delete" aria-label="Delete"><span class="material-icons">delete</span></button>
+          </td>
+        </tr>
+        <tr *ngIf="!filteredProfiles.length">
+          <td colspan="6" class="table-empty">No profiles found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

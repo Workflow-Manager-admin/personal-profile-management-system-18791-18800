@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "@angular/animations": "15.3.11",
+    "@angular/common": "15.3.11",
+    "@angular/compiler": "15.3.11",
+    "@angular/core": "15.3.11",
+    "@angular/forms": "15.3.11",
+    "@angular/platform-browser": "15.3.11",
+    "@angular/platform-browser-dynamic": "15.3.11",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.3.1",
+    "zone.js": "^0.14.2"
   },
   "scripts": {
     "start": "react-scripts start",
