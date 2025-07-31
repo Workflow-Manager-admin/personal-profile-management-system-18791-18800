@@ -1,0 +1,338 @@
+:root {
+  --dashboard-bg: #f6faff;
+  --dashboard-font: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --header-gradient: linear-gradient(90deg, #fe6ad5 0%, #6078ea 100%);
+  --info-card-radius: 22px;
+  --info-card-shadow: 0 6px 18px 0 rgba(70, 137, 255, 0.10);
+  --info-card-gap: 1.5rem;
+  --tab-gradient: linear-gradient(90deg, #fdc7ee 0%, #aeecfb 100%);
+  --card-gradient-1: linear-gradient(120deg, #FD7DC1 0%, #8FCDFA 80%);
+  --card-gradient-2: linear-gradient(120deg, #6CD3FF 0%, #FE65A6 90%);
+  --card-gradient-3: linear-gradient(120deg, #fdc7ee 0%, #b6f6fc 60%);
+  --card-gradient-4: linear-gradient(120deg, #fee7e1 0%, #bccdfc 50%);
+  --card-bg: #fff;
+  --pastel-row-1: #f6f8fe;
+  --pastel-row-2: #eaf3fa;
+  --table-header-bg: #dde8fc;
+  --status-active: #6ecb6e;
+  --status-pending: #ffb955;
+  --status-suspended: #f87777;
+  --role-admin: #1976d2;
+  --role-editor: #00bcd4;
+  --role-user: #ad73ff;
+  --btn-gradient: linear-gradient(90deg, #fe6ad5 0%, #6078ea 90%);
+  --btn-shadow: 0 3px 9px 0 rgba(254, 106, 213, 0.08);
+}
+
+/* Dashboard base */
+.dashboard-bg {
+  min-height: 100vh;
+  background: var(--dashboard-bg);
+  font-family: var(--dashboard-font);
+  padding-bottom: 40px;
+}
+
+/* Vibrant gradient header */
+.dashboard-header {
+  padding: 46px 0 24px 0;
+  text-align: center;
+  position: relative;
+  background: none;
+}
+.header-gradient {
+  background: var(--header-gradient);
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 120%;
+  z-index: 0;
+  opacity: .99;
+  border-radius: 0 0 56px 56px;
+  box-shadow: 0 8px 24px 0 rgba(116, 99, 255, .18);
+}
+.dashboard-title {
+  position: relative;
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 9px;
+  z-index: 1;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 12px #bfc9ff30;
+}
+.dashboard-subtitle {
+  position: relative;
+  color: #e4e4fa;
+  font-size: 1.18rem;
+  z-index: 1;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* Info cards row */
+.dashboard-info-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--info-card-gap);
+  justify-content: center;
+  margin: -40px auto 22px auto;
+  position: relative;
+  z-index: 2;
+}
+.info-card {
+  min-width: 180px;
+  min-height: 90px;
+  flex: 1 1 180px;
+  border-radius: var(--info-card-radius);
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 24px 25px;
+  box-shadow: var(--info-card-shadow);
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: #1e222c;
+  transition: transform .13s, box-shadow .13s;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.info-card:hover {
+  transform: translateY(-2px) scale(1.028);
+  box-shadow: 0 12px 32px 2px rgba(254,106,213,0.14);
+}
+.card-bg-gradient-1 { background: var(--card-gradient-1); color: #0a143a;}
+.card-bg-gradient-2 { background: var(--card-gradient-2); color: #552a61;}
+.card-bg-gradient-3 { background: var(--card-gradient-3); color: #23434d;}
+.card-bg-gradient-4 { background: var(--card-gradient-4); color: #363f62;}
+.info-card-icon {
+  font-size: 2rem;
+  opacity: .75;
+  margin-right: 10px;
+}
+.info-card-label {
+  flex: 1 1 auto;
+  font-size: 1rem;
+  color: #39404c;
+  opacity: 0.72;
+  font-weight: 600;
+}
+.info-card-value {
+  font-size: 1.62rem;
+  font-weight: bold;
+  color: #18283b;
+  opacity: .98;
+  margin-left: 8px;
+}
+
+/* Tab and actions row */
+.dashboard-filters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 1020px;
+  margin: 32px auto 22px auto;
+  flex-wrap: wrap;
+  gap: 20px 6px;
+}
+.filter-tabs {
+  display: flex;
+  gap: 7px;
+}
+.filter-tab {
+  font-size: 1.1rem;
+  color: #364663;
+  background: var(--tab-gradient);
+  border: none;
+  border-radius: 15px 15px 4px 4px;
+  padding: 12px 26px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: .75;
+  box-shadow: 0 2px 8px #fe6ad545;
+  position: relative;
+  transition: opacity .11s, background .15s, transform .15s;
+}
+.filter-tab.active, .filter-tab:focus {
+  opacity: 1;
+  box-shadow: 0 4px 14px #9b8bfa26;
+  background: linear-gradient(90deg, #fe6ad5 15%, #6078ea 81%);
+  color: #fff;
+  transform: scale(1.06);
+  outline: 0;
+}
+
+/* Actions: search and create button */
+.dashboard-actions {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+.profile-search {
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 3px 14px 0 #e7edfa;
+  background: #f8fbff;
+  font-size: 1rem;
+  width: 230px;
+  min-width: 180px;
+  outline: none;
+  color: #224267;
+  transition: box-shadow .18s;
+}
+.profile-search:focus {
+  box-shadow: 0 6px 24px 0 #79b0f57c;
+}
+.btn-create-profile {
+  background: var(--btn-gradient);
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 34px;
+  border-radius: 15px;
+  box-shadow: var(--btn-shadow);
+  cursor: pointer;
+  letter-spacing: .4px;
+  transition: box-shadow .14s, background .14s, transform .12s;
+}
+.btn-create-profile:hover {
+  background: linear-gradient(96deg, #6078ea 10%, #fe6ad5 96%);
+  box-shadow: 0 7px 16px #fe6ad580, 0 2px 13px #6078ea85;
+  transform: scale(1.043);
+}
+
+/* Profile table card */
+.profile-table-card {
+  max-width: 1020px;
+  background: #fff;
+  border-radius: 24px;
+  margin: 0 auto;
+  padding: 22px 15px;
+  box-shadow: 0 8px 32px #6078ea17;
+  margin-top: 10px;
+  margin-bottom: 22px;
+  overflow-x: auto;
+}
+
+/* Pastel data table */
+.profile-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.01rem;
+  color: #253459;
+  border-radius: 14px;
+  overflow: hidden;
+  background: none;
+}
+
+.profile-table th {
+  background: var(--table-header-bg);
+  color: #16335b;
+  font-weight: 800;
+  text-align: left;
+  padding: 18px 12px 11px 15px;
+  border-bottom: 2px solid #dde8fc;
+  font-size: 1.07rem;
+  letter-spacing: .03em;
+}
+.profile-table td {
+  padding: 15px 12px 13px 15px;
+  border-bottom: 1px solid #f2f5fc;
+  vertical-align: middle;
+  background: none;
+}
+.profile-table tr {
+  background: var(--pastel-row-1);
+  transition: background .14s;
+}
+.profile-table tr:nth-child(even) {
+  background: var(--pastel-row-2);
+}
+.profile-table tr:hover {
+  background: #e5edfc;
+}
+.table-empty-message {
+  text-align: center;
+  color: #b7bdd6;
+  font-style: italic;
+  padding: 34px 0;
+  font-size: 1.08rem;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 14px;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .05em;
+  box-shadow: 0 1px 4px #e7aeda30;
+}
+.status-active { background: var(--status-active);}
+.status-pending { background: var(--status-pending);}
+.status-suspended { background: var(--status-suspended);}
+
+.role-pill {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 12px;
+  font-size: .99rem;
+  background: #f4f6ff;
+  color: #1976d2;
+  font-weight: 700;
+  margin-right: 4px;
+  min-width: 62px;
+  text-align: center;
+  letter-spacing: .03em;
+}
+.role-pill-admin { background: #e1f0ff; color: var(--role-admin);}
+.role-pill-editor { background: #e5fcff; color: var(--role-editor);}
+.role-pill-user { background: #f3edfa; color: var(--role-user);}
+
+/* Row action buttons */
+.action-btn {
+  font-size: .97rem;
+  border: none;
+  border-radius: 10px;
+  margin-right: 8px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #b698f312;
+  background: #f7f6fe;
+  color: #6b6294;
+  transition: all .11s;
+}
+.action-btn:last-child { margin-right: 0;}
+.action-btn.view-btn {
+  background: #e7f7fa;
+  color: #2b3f5b;
+}
+.action-btn.edit-btn {
+  background: #fdeafd;
+  color: #b828ac;
+}
+.action-btn:hover {
+  transform: translateY(-2px) scale(1.066);
+}
+
+/* Responsive (mobile) */
+@media (max-width: 950px) {
+  .dashboard-info-cards { gap: 1rem; }
+  .info-card { padding: 18px 14px;}
+}
+@media (max-width: 670px) {
+  .dashboard-info-cards { flex-direction: column; gap: 18px;}
+  .dashboard-filters { flex-direction: column; align-items: stretch;}
+  .dashboard-actions { justify-content: flex-end;}
+  .profile-table-card { padding: 5px 3px;}
+  .dashboard-header { padding: 36px 0 18px 0;}
+  .dashboard-title { font-size: 1.55rem;}
+}
