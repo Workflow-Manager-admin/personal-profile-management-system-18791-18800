@@ -1,0 +1,15 @@
+<div class="flex flex-col justify-between bg-white border border-blue-100 rounded-2xl shadow-sm px-6 py-5 min-w-[210px] min-h-[100px] flex-1"
+     style="box-shadow: 0 2px 7px 0 rgba(60,90,140,0.08); border-radius: 18px;">
+  <div class="flex flex-row justify-between items-baseline mb-1">
+    <span class="text-2xl font-bold"
+      [ngClass]="colorGradient ? 'bg-gradient-to-r ' + colorGradient + ' text-transparent bg-clip-text drop-shadow' : ''">
+      {{number}}
+    </span>
+    <span class="text-sm font-semibold" [ngClass]="colorGradient ? 'bg-gradient-to-r ' + colorGradient + ' text-transparent bg-clip-text' : ''">
+      {{subcaption}}
+    </span>
+  </div>
+  <div class="text-blue-gray-400 text-xs font-medium mt-1">{{description}}</div>
+  <!-- Optional badge, if desired in future: -->
+  <span *ngIf="badge" [class]="'pm-badge-'+badge">{{badge}}</span>
+</div>

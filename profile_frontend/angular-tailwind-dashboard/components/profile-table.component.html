@@ -1,0 +1,38 @@
+<table class="min-w-full rounded-2xl table-fixed">
+  <thead>
+    <tr class="bg-blue-gray-50 text-blue-gray-400 font-medium text-base">
+      <th class="px-4 py-2 font-semibold text-left">Profile Name</th>
+      <th class="px-4 py-2 font-semibold text-left">Devices</th>
+      <th class="px-4 py-2 font-semibold text-left">Type</th>
+      <th class="px-4 py-2 font-semibold text-left">Status</th>
+      <th class="px-4 py-2 font-semibold text-left">Created</th>
+      <th class="px-4 py-2 font-semibold text-left">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let p of profiles; let i = index"
+      [ngClass]="i % 2 === 1 ? 'bg-blue-gray-50' : 'bg-white'"
+      class="text-blue-gray-700 text-sm font-medium">
+      <td class="px-4 py-2">{{p.name}}</td>
+      <td class="px-4 py-2">{{p.devices}}</td>
+      <td class="px-4 py-2">{{p.type}}</td>
+      <td class="px-4 py-2"><app-status-badge [status]="p.status"></app-status-badge></td>
+      <td class="px-4 py-2">{{p.created}}</td>
+      <td class="px-4 py-2">
+        <span class="flex flex-row space-x-1">
+          <!-- Use Material or FontAwesome icon font if available, replace with SVGs if not -->
+          <button class="rounded-lg p-1 hover:bg-blue-100 transition" title="Edit">
+            <span class="material-icons text-blue-500" style="font-size:18px;">edit</span>
+          </button>
+          <button class="rounded-lg p-1 hover:bg-pink-100 transition" title="Copy">
+            <span class="material-icons text-pink-400" style="font-size:18px;">content_copy</span>
+          </button>
+          <button class="rounded-lg p-1 hover:bg-red-100 transition" title="Delete">
+            <span class="material-icons text-red-400" style="font-size:18px;">delete</span>
+          </button>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

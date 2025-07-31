@@ -1,0 +1,6 @@
+:host header {
+  box-shadow: 0 1.5px 10px 0 rgba(90,60,140,0.09);
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  font-family: 'Inter','Segoe UI',sans-serif;
+}

@@ -1,0 +1,5 @@
+:host div {
+  border-radius: 18px;
+  font-family: 'Inter','Segoe UI',sans-serif;
+  box-shadow: 0 2px 8px rgba(60,120,200,0.07);
+}

@@ -1,0 +1,9 @@
+/* Use Tailwind CSS classes as main styling approach per spec. Soft blue-gray overall, min 18px radii where visually substantial. */
+:host {
+  --primary-shadow: 0 3px 16px rgba(60,60,70,0.06);
+  --input-shadow: 0 1.5px 8px 0 rgba(48,120,250,0.03);
+  --pastel-bg: #F7F9FC;
+  --corner-radius: 18px;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--pastel-bg);
+}

@@ -1,0 +1,16 @@
+table {
+  border-radius: 18px;
+  border-collapse: separate;
+  overflow: hidden;
+  font-family: 'Inter','Segoe UI',sans-serif;
+  background: transparent;
+  min-width: 760px;
+}
+th, td {
+  font-size: 15px;
+  padding: 12px 8px;
+  line-height: 1.5;
+}
+tbody tr {
+  transition: background 0.12s;
+}

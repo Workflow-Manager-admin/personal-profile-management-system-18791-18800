@@ -1,0 +1,11 @@
+<div class="flex flex-row gap-2 border-b-2 border-blue-50 mt-2 mb-2 pl-1">
+  <button
+    *ngFor="let tab of tabs; let i = index"
+    class="px-3 py-2 font-medium text-base rounded-t-md transition-all duration-150"
+    [ngClass]="i === activeTab ? 'border-b-4 border-blue-500 text-blue-600' : 'text-blue-400 hover:text-pink-400'"
+    (click)="tabChange.emit(i)"
+    [attr.aria-current]="i === activeTab ? 'page' : null"
+    type="button">
+    {{tab}}
+  </button>
+</div>
