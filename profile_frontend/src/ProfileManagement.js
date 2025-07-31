@@ -194,6 +194,7 @@ export default function ProfileManagement() {
     { label: 'Profile Management' },
     { label: 'Device Management' },
     { label: 'Firmware Management' },
+    { label: 'ICX Management' }, // Spelling fix and addition
   ];
 
   // Optionally: Render secondary content based on the active sidebar item.
