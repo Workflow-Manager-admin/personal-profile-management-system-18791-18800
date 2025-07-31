@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './Sidebar.css';
 import ProfileManagement from './ProfileManagement';
 
 // PUBLIC_INTERFACE

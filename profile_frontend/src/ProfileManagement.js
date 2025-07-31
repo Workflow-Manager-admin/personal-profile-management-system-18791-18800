@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ProfileManagement.css';
+import Sidebar from './Sidebar';
 
 // Mock icon SVGs (inline for simplicity; in a real app, use an icon library or import SVGs)
 const AppLogo = () => (
@@ -185,31 +186,48 @@ export default function ProfileManagement() {
   const [search, setSearch] = useState('');
   const [profiles, setProfiles] = useState(mockProfiles);
 
-  // (Filtering and tab logic would go here for real data...)
+  // Track selected section in the sidebar; default to Profile Management (index 0).
+  const [sidebarActive, setSidebarActive] = useState(0);
+
+  // Sidebar navigation items, icons optional (for demo just colored dots)
+  const sidebarItems = [
+    { label: 'Profile Management' },
+    { label: 'Device Management' },
+    { label: 'Firmware Management' },
+  ];
+
+  // Optionally: Render secondary content based on the active sidebar item.
 
   return (
-    <div className="pm-bg">
+    <div className="pm-bg" style={{ minHeight: '100vh' }}>
       <ProfileHeader />
-      <main className="pm-main">
-        <section className="pm-stats-row">
-          {stats.map((s, idx) =>
-            <StatsCard
-              key={s.subcaption}
-              number={s.number}
-              subcaption={s.subcaption}
-              color={s.color}
-              description={s.description}
-            />
-          )}
-        </section>
-        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-        <SearchActionBar
-          searchQuery={search}
-          onSearch={setSearch}
-          onCreate={() => alert("Create Profile Clicked!")}
+      <div style={{ display: 'flex', maxWidth: 1260, margin: '0 auto', gap: 0 }}>
+        <Sidebar
+          items={sidebarItems}
+          activeIndex={sidebarActive}
+          onItemClick={setSidebarActive}
         />
-        <ProfileTable profiles={profiles} />
-      </main>
+        <main className="pm-main" style={{ flex: 1 }}>
+          <section className="pm-stats-row">
+            {stats.map((s, idx) =>
+              <StatsCard
+                key={s.subcaption}
+                number={s.number}
+                subcaption={s.subcaption}
+                color={s.color}
+                description={s.description}
+              />
+            )}
+          </section>
+          <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+          <SearchActionBar
+            searchQuery={search}
+            onSearch={setSearch}
+            onCreate={() => alert("Create Profile Clicked!")}
+          />
+          <ProfileTable profiles={profiles} />
+        </main>
+      </div>
     </div>
   );
 }
