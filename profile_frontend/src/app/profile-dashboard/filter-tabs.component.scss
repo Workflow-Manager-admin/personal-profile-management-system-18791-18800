@@ -1,0 +1,26 @@
+.tab-row {
+  display: flex;
+  gap: 11px;
+}
+.tab {
+  border: none;
+  border-radius: 15px 15px 8px 8px;
+  background: linear-gradient(90deg, #fdc7ee 0%, #aeecfb 100%);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3a567c;
+  opacity: 0.8;
+  padding: 15px 34px 13px 37px;
+  transition: opacity .13s, background .23s, color .13s, transform .14s;
+  margin-bottom: 2px;
+  box-shadow: 0 2px 11px #ded6f444;
+  cursor: pointer;
+  &.active, &:focus {
+    color: #fff;
+    background: linear-gradient(90deg, #fe6ad5 2%, #6078ea 97%);
+    opacity: 1;
+    box-shadow: 0 4px 18px #b8a5fd24;
+    transform: scale(1.075);
+    outline: none;
+  }
+}

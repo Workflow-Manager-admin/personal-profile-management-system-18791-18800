@@ -1,0 +1,47 @@
+<div class="dashboard-root">
+  <!-- Header gradient -->
+  <header class="header-outer">
+    <div class="header-gradient"></div>
+    <div class="header-content">
+      <h1 class="dashboard-title">Profile Management</h1>
+      <div class="dashboard-desc">
+        Organize, create, and manage all profile types for your organization.
+      </div>
+    </div>
+  </header>
+
+  <!-- Info Cards Row -->
+  <div class="info-card-row">
+    <app-info-card
+      *ngFor="let card of infoCards"
+      [title]="card.title"
+      [value]="card.value"
+      [badge]="card.badge"
+      [gradientClass]="card.gradient">
+    </app-info-card>
+  </div>
+
+  <!-- Tabs and Actions Row -->
+  <div class="dashboard-toolbar">
+    <app-filter-tabs
+      [tabs]="tabs"
+      [activeTab]="activeTab"
+      (activeTabChange)="onTab($event)">
+    </app-filter-tabs>
+    <div class="dashboard-actions">
+      <input
+        class="dashboard-search"
+        type="text"
+        placeholder="Search profiles…"
+        [(ngModel)]="searchText"
+        aria-label="Search profiles"
+      />
+      <button class="create-btn">
+        + Create Profile
+      </button>
+    </div>
+  </div>
+
+  <!-- Data Table -->
+  <app-profile-table [profiles]="filteredProfiles"></app-profile-table>
+</div>
