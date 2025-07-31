@@ -40,7 +40,7 @@
 
 .pm-header__title {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.08rem;
   letter-spacing: 0.05em;
   color: #FFF;
 }
@@ -95,18 +95,18 @@
   margin-bottom: 8px;
 }
 .pm-stats-card__number {
-  font-size: 2.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.0;
 }
 .pm-stats-card__subcaption {
-  font-size: 1.05rem;
+  font-size: 0.86rem;
   font-weight: 600;
   opacity: 0.95;
   margin-left: 4px;
 }
 .pm-stats-card__desc {
-  font-size: 1rem;
+  font-size: 0.83rem;
   color: var(--gray-text);
   font-weight: 500;
   margin-top: 8px;
@@ -124,10 +124,10 @@
 .pm-tab {
   background: none;
   border: none;
-  padding: 8px 18px 10px 8px;
+  padding: 7px 12px 7px 7px;
   font-family: inherit;
   font-weight: 500;
-  font-size: 1.04rem;
+  font-size: 0.92rem;
   color: var(--accent-blue);
   cursor: pointer;
   border-bottom: 3px solid transparent;
@@ -169,21 +169,21 @@
   border: none;
   background: transparent;
   outline: none;
-  font-size: 1.06rem;
-  padding: 7px 12px 7px 2px;
+  font-size: 0.93rem;
+  padding: 6px 10px 6px 2px;
   flex: 1;
   min-width: 0;
   font-family: inherit;
 }
 .pm-create-btn {
-  margin-left: 18px;
+  margin-left: 14px;
   background: var(--primary-action);
   color: #fff;
   font-weight: 600;
-  font-size: 1.03rem;
+  font-size: 0.94rem;
   border: none;
   border-radius: 8px;
-  padding: 9px 22px;
+  padding: 7px 17px;
   box-shadow: 0 2px 6px rgba(30,100,250,0.08);
   cursor: pointer;
   transition: background 0.15s, box-shadow 0.15s;
@@ -214,19 +214,19 @@
   background: #F7FAFD;
   color: var(--gray-text);
   font-weight: 600;
-  font-size: 15px;
-  padding: 11px 12px;
+  font-size: 13px;
+  padding: 8px 8px;
   text-align: left;
   border-bottom: 2.5px solid #E1E8F0;
   letter-spacing: 0.02em;
 }
 .pm-profile-table td {
-  font-size: 1.04rem;
+  font-size: 0.93rem;
   color: var(--text-heading);
   font-weight: 500;
-  padding: 11px 12px;
+  padding: 8px 8px;
   background: transparent;
-  height: 48px;
+  height: 38px;
   border-bottom: 1.1px solid #F0F3FA;
 }
 
@@ -241,10 +241,10 @@
 /* STATUS BADGE */
 .pm-status-badge {
   display: inline-block;
-  min-width: 54px;
-  border-radius: 15px;
-  padding: 5px 17px;
-  font-size: 1.02rem;
+  min-width: 42px;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #fff;
   background: #bbb;
@@ -312,11 +312,11 @@
     padding: 7px 2px;
   }
   .pm-header {
-    padding: 0 6px;
-    height: 44px;
+    padding: 0 4px;
+    height: 40px;
   }
   .pm-header__title {
-    font-size: 1.13rem;
+    font-size: 0.93rem;
   }
   .pm-table-wrapper {
     min-width: 100%;
