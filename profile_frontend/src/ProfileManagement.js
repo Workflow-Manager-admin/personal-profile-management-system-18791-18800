@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ProfileManagement.css';
-import Sidebar from './Sidebar';
+import Sidebar, { SidebarSectionStub } from './Sidebar';
 
 // Mock icon SVGs (inline for simplicity; in a real app, use an icon library or import SVGs)
 const AppLogo = () => (
@@ -188,27 +188,22 @@ export default function ProfileManagement() {
 
   // Track selected section in the sidebar; default to Profile Management (index 0).
   const [sidebarActive, setSidebarActive] = useState(0);
+  // New collapsed state for sidebar toggling
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   // Sidebar navigation items, icons optional (for demo just colored dots)
   const sidebarItems = [
     { label: 'Profile Management' },
     { label: 'Device Management' },
     { label: 'Firmware Management' },
-    { label: 'ICX Management' }, // Spelling fix and addition
+    { label: 'ICX Management' }
   ];
 
-  // Optionally: Render secondary content based on the active sidebar item.
-
-  return (
-    <div className="pm-bg" style={{ minHeight: '100vh' }}>
-      <ProfileHeader />
-      <div style={{ display: 'flex', maxWidth: 1260, margin: '0 auto', gap: 0 }}>
-        <Sidebar
-          items={sidebarItems}
-          activeIndex={sidebarActive}
-          onItemClick={setSidebarActive}
-        />
-        <main className="pm-main" style={{ flex: 1 }}>
+  // Optionally: Show stub content for device/firmware/icx
+  function renderMainContent() {
+    if (sidebarActive === 0) {
+      return (
+        <>
           <section className="pm-stats-row">
             {stats.map((s, idx) =>
               <StatsCard
@@ -227,6 +222,33 @@ export default function ProfileManagement() {
             onCreate={() => alert("Create Profile Clicked!")}
           />
           <ProfileTable profiles={profiles} />
+        </>
+      );
+    }
+    // Device, Firmware, ICX stubs
+    if (sidebarActive === 1)
+      return <SidebarSectionStub label="Device Management" />;
+    if (sidebarActive === 2)
+      return <SidebarSectionStub label="Firmware Management" />;
+    if (sidebarActive === 3)
+      return <SidebarSectionStub label="ICX Management" />;
+    return null;
+  }
+
+  return (
+    <div className="pm-bg" style={{ minHeight: '100vh' }}>
+      <ProfileHeader />
+      <div style={{ display: 'flex', maxWidth: 1260, margin: '0 auto', gap: 0 }}>
+        <Sidebar
+          items={sidebarItems}
+          activeIndex={sidebarActive}
+          onItemClick={setSidebarActive}
+          collapsible={true}
+          collapsed={sidebarCollapsed}
+          onCollapseToggle={setSidebarCollapsed}
+        />
+        <main className="pm-main" style={{ flex: 1 }}>
+          {renderMainContent()}
         </main>
       </div>
     </div>
