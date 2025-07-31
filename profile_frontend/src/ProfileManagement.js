@@ -3,7 +3,6 @@ import './ProfileManagement.css';
 import Sidebar from './Sidebar';
 import DeviceManagement from './DeviceManagement';
 import FirmwareManagement from './FirmwareManagement';
-import ICXManagement from './ICXManagement';
 
 // Mock icon SVGs (inline for simplicity; in a real app, use an icon library or import SVGs)
 const AppLogo = () => (
@@ -198,11 +197,9 @@ export default function ProfileManagement() {
   const sidebarItems = [
     { label: 'Profile Management' },
     { label: 'Device Management' },
-    { label: 'Firmware Management' },
-    { label: 'ICX Management' }
+    { label: 'Firmware Management' }
   ];
 
-  // Optionally: Show stub content for device/firmware/icx
   function renderMainContent() {
     if (sidebarActive === 0) {
       return (
@@ -232,8 +229,6 @@ export default function ProfileManagement() {
       return <DeviceManagement />;
     if (sidebarActive === 2)
       return <FirmwareManagement />;
-    if (sidebarActive === 3)
-      return <ICXManagement />;
     return null;
   }
 
