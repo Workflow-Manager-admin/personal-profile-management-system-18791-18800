@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './ProfileManagement.css';
-import Sidebar, { SidebarSectionStub } from './Sidebar';
+import Sidebar from './Sidebar';
+import DeviceManagement from './DeviceManagement';
+import FirmwareManagement from './FirmwareManagement';
+import ICXManagement from './ICXManagement';
 
 // Mock icon SVGs (inline for simplicity; in a real app, use an icon library or import SVGs)
 const AppLogo = () => (
@@ -225,13 +228,12 @@ export default function ProfileManagement() {
         </>
       );
     }
-    // Device, Firmware, ICX stubs
     if (sidebarActive === 1)
-      return <SidebarSectionStub label="Device Management" />;
+      return <DeviceManagement />;
     if (sidebarActive === 2)
-      return <SidebarSectionStub label="Firmware Management" />;
+      return <FirmwareManagement />;
     if (sidebarActive === 3)
-      return <SidebarSectionStub label="ICX Management" />;
+      return <ICXManagement />;
     return null;
   }
 
