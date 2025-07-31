@@ -8,7 +8,7 @@ import FirmwareManagement from './FirmwareManagement';
 const AppLogo = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" style={{marginRight: 12}}>
     <circle cx="16" cy="16" r="16" fill="#EA4EC6"/>
-    <text x="50%" y="56%" textAnchor="middle" fontSize="16" fontFamily="Arial" fontWeight="700" fill="white" dy=".2em">I</text>
+    <text x="50%" y="56%" textAnchor="middle" fontSize="16" fontFamily="Arial" fontWeight="700" fill="white" dy=".2em">ICX</text>
   </svg>
 );
 
@@ -55,7 +55,7 @@ const ProfileHeader = () => (
   <header className="pm-header">
     <div className="pm-header__logo-title">
       <AppLogo/>
-      <span className="pm-header__title">ICK</span>
+      <span className="pm-header__title">ICX</span>
     </div>
     <button className="pm-header__user-btn" aria-label="User menu">
       <UserCircleIcon />

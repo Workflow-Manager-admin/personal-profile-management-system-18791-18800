@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 // PUBLIC_INTERFACE
 export class GradientHeaderComponent {
-  @Input() title: string = "ICK";
+  @Input() title: string = "ICX";
 }
