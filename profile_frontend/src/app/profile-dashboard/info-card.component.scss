@@ -1,0 +1,56 @@
+.info-card {
+  min-width: 210px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(140, 180, 255, .13);
+  padding: 30px 38px 26px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  cursor: pointer;
+  transition: transform .13s, box-shadow .13s;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 14px 38px 0 rgba(254,106,213,0.19);
+  }
+}
+
+.info-card-content {
+  width: 100%;
+}
+
+.info-title {
+  color: #174b7e;
+  font-size: 1rem;
+  opacity: .90;
+}
+
+.info-main {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #09204e;
+  margin-top: -3px;
+}
+
+.info-badge {
+  font-size: .99rem;
+  border-radius: 8px;
+  display: inline-block;
+  color: #fff;
+  opacity: .82;
+  margin-top: 5px;
+  background: #7babe6;
+  padding: 0.17em 0.85em;
+  font-weight: 600;
+  box-shadow: 0 2px 7px #dfdfff44;
+}
+
+/* Example gradients for dynamic class binding */
+.gradient-1 {background: linear-gradient(115deg, #fd7dc1c7, #8FCDFAc4);}
+.gradient-2 {background: linear-gradient(115deg, #B9F4E5a0, #8FCDFAeb);}
+.gradient-3 {background: linear-gradient(120deg, #fdc7ee 0%, #b6f6fc 60%);}

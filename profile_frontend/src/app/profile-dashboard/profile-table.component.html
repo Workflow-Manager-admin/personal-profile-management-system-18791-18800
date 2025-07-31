@@ -1,0 +1,49 @@
+<section class="dashboard-table-card">
+  <table class="dashboard-table">
+    <thead>
+      <tr>
+        <th>Profile Name</th>
+        <th>Devices</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Created Date</th>
+        <th style="min-width: 110px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of profiles">
+        <td>{{ item.name }}</td>
+        <td>{{ item.devices }}</td>
+        <td>
+          <span
+            class="type-pill"
+            [ngClass]="{
+              'impromptu': item.type === 'IMPROMPTU',
+              'schedule': item.type === 'SCHEDULE'
+            }"
+          >
+            {{ item.type === 'IMPROMPTU' ? 'Impromptu' : 'Schedule' }}
+          </span>
+        </td>
+        <td>
+          <span
+            class="status-pill"
+            [ngClass]="{
+              'active': item.status === 'ACTIVE',
+              'inactive': item.status === 'INACTIVE'
+            }"
+          >{{ item.status === 'ACTIVE' ? 'Active' : 'Inactive' }}</span>
+        </td>
+        <td>{{ item.created }}</td>
+        <td>
+          <button class="table-action" title="Edit" aria-label="Edit"><span class="material-icons">edit</span></button>
+          <button class="table-action" title="Download" aria-label="Download"><span class="material-icons">download</span></button>
+          <button class="table-action" title="Delete" aria-label="Delete"><span class="material-icons">delete</span></button>
+        </td>
+      </tr>
+      <tr *ngIf="!profiles.length">
+        <td colspan="6" class="table-empty">No profiles found.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
